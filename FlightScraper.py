@@ -1,11 +1,10 @@
 import json
 import requests
-from datetime import datetime
 import FlightHelper as fh
 
 # Commented out to save time while testing...
 #res = requests.get('https://skiplagged.com/api/search.php?from=EWR&to=CHS&depart=2018-10-12&return=2018-10-14&format=v2&_=1519778653193',
-                   #headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36'})
+#                   headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36'})
 #flightData = json.loads(res.text)
 
 
@@ -70,9 +69,12 @@ filteredInbound, filteredOutbound = fh.sanitizeInOutbound(flightsInbound, flight
 #At this point sanitizedFlights, filteredInbound, and filteredOutbound have the flight data we want to work with
 
 #print(str(fh.getCheapestRoundTripFlight(flightsOutbound, flightsInbound, flights)))
+
 roundTripResults = fh.getCheapestRoundTripFlights(filteredOutbound, filteredInbound)
 
 fh.displayTrips(roundTripResults)
+
+fh.addFlights(roundTripResults)
 
 
 

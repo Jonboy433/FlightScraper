@@ -1,8 +1,7 @@
-from collections import OrderedDict
-import json
 from datetime import datetime
 import math
 import logging
+import flightDB
 
 logging.basicConfig(level=logging.DEBUG, filename='app.log', format='%(asctime)s: %(levelname)s: %(message)s')
 
@@ -69,12 +68,12 @@ def getCheapestRoundTripFlights(outboundList, inboundList, numFlights=5):
         newFlight = {}
         logging.debug('Trying to add this flight: ' + outboundFlights[flight]['flight'])
         newFlight['outbound'] = {
-            'id' : outboundFlights[flight]['flight'] ,
+            'id' : outboundFlights[flight]['flight'],
             'one_way_price' : outboundFlights[flight]['one_way_price']
         }
 
         newFlight['inbound'] = {
-            'id' : inboundFlights['flight'] ,
+            'id' : inboundFlights['flight'],
             'one_way_price' : inboundFlights['one_way_price']
         }
 
@@ -248,11 +247,90 @@ def displaySegmentInfo(segment):
     outboundDuration = formatDuration(outboundDuration)
 
     # UA 1234 - EWR -> CHS - 8:00 -> 12:00 (Duration: 4)
-    print ('{} {} - {} -> - {} {} -> {} (Duration: {})'.format(airline, flight_number, outboundAirport, inboundAirpot,
+    print ('[{} {}] {} -> {} - {} -> {} (Duration: {})'.format(airline, flight_number, outboundAirport, inboundAirpot,
                                                               outTime, inTime, outboundDuration))
 
+def prepareFlightRecords(flightList):
+    flights = flightList.get('flights')
+    finalList = []
 
+    for flight in flights:
+        flightRecord = {}
 
+        for key in flight.keys():
+            if key == 'outbound':
+                legCount = flight[key]['count']
+                for k, v in flight[key].items():
+                    if k == 'segments':
+                        print('Collecting outbound segment:')
+                        for idx, segment in enumerate(flight[key][k]):  # for segment in flight[key][k]:
+                            # legCount = 1 for nonstop and 2 for connecting
 
+                            # FIRST FLIGHT DATA
+                            if idx == 0:
+                                flightRecord['departFlightNum'] = str(
+                                    segment['airline'] + ' ' + str(segment['flight_number']))
+                                flightDateTime = segment['departure']['time']
+                                # flightRecord['departFlightDate'] = flightDateTime[:10]
+                                flightRecord['departFlightDate'] = flightDateTime[5:7] + '/' + flightDateTime[
+                                                                                               8:10] + '/' + flightDateTime[
+                                                                                                             2:4]
+                                flightRecord['departFlightTime'] = flightDateTime[11:16]
+                                if legCount == 1:
+                                    flightRecord['departRoute'] = str(
+                                        segment['departure']['airport'] + '-' + segment['arrival']['airport'])
+                                    flightRecord['connectingFlightOut'] = ''
 
+                                else:
+                                    flightRecord['departRoute'] = str(segment['departure']['airport'] + '-')
+                            # CONNECTING FLIGHT DATA
+                            if idx == 1:
+                                flightRecord['connectingFlightOut'] = str(
+                                    segment['airline'] + ' ' + str(segment['flight_number']))
+                                flightRecord['departRoute'] += str(
+                                    segment['departure']['airport'] + '-' + segment['arrival']['airport'])
+
+            if key == 'inbound':
+                legCount = flight[key]['count']
+                for k, v in flight[key].items():
+                    if k == 'segments':
+                        print('Collecting inbound segment:')
+                        for idx, segment in enumerate(flight[key][k]):  # for segment in flight[key][k]:
+                            # legCount = 1 for nonstop and 2 for connecting
+                            # FIRST FLIGHT DATA
+                            if idx == 0:
+                                flightRecord['returnFlightNum'] = str(
+                                    segment['airline'] + ' ' + str(segment['flight_number']))
+                                flightDateTime = segment['departure']['time']
+                                # flightRecord['returnFlightDate'] = flightDateTime[:10]
+                                flightRecord['returnFlightDate'] = flightDateTime[5:7] + '/' + flightDateTime[
+                                                                                               8:10] + '/' + flightDateTime[
+                                                                                                             2:4]
+                                flightRecord['returnFlightTime'] = flightDateTime[11:16]
+                                if legCount == 1:
+                                    flightRecord['returnRoute'] = str(
+                                        segment['departure']['airport'] + '-' + segment['arrival']['airport'])
+
+                                else:
+                                    flightRecord['returnRoute'] = str(segment['departure']['airport'] + '-')
+                            # CONNECTING FLIGHT DATA
+                            if idx == 1:
+                                flightRecord['connectingFlightIn'] = str(
+                                    segment['airline'] + ' ' + str(segment['flight_number']))
+                                flightRecord['returnRoute'] += str(segment['departure']['airport'] + '-' +
+                                                                   segment['arrival']['airport'])
+            if key == 'round_trip_cost':
+                flightRecord['price'] = '{:,.2f}'.format((flight.get(key)) / 100)
+        print('finished processing flight: ' + str(flightRecord))
+        finalList.append(flightRecord)
+
+    return finalList
+
+def addFlights(allRoundtrips):
+    flights = prepareFlightRecords(allRoundtrips)
+
+    flightDB.addFlights(flights)
+
+    flightDB.closeConnection()
+    return None
 

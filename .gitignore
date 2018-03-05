@@ -1,0 +1,5 @@
+# Logs
+*.log
+
+# DB Config file
+dbconfig.py
