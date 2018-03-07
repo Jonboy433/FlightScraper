@@ -1,23 +1,63 @@
+import argparse
 import json
 import requests
 import FlightHelper as fh
 
-# Commented out to save time while testing...
-#res = requests.get('https://skiplagged.com/api/search.php?from=EWR&to=CHS&depart=2018-10-12&return=2018-10-14&format=v2&_=1519778653193',
-                   #headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36'})
 
-res = requests.get('https://skiplagged.com/api/search.php?from=EWR&to=CHS&depart=2018-10-12&return=2018-10-14&format=v2',
-                   headers = {'User-Agent':'Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.84 Safari/537.36'})
+def validAirportCode(iata_code):
+    airport = iata_code
+    if ((len(airport) != 3)) or airport.isdigit():
+        raise argparse.ArgumentTypeError('You must enter a valid 3 digit airport code')
+    return airport
+
+def validFlightDate(date):
+    flight_date = date
+
+    if (len(flight_date) != 10) or flight_date.isdigit():
+        raise argparse.ArgumentTypeError('Please enter a valid date in format YYYY-MM-DD')
+    # valid date: 2018-10-12
+    year = flight_date[0:4]
+    month = flight_date[5:7]
+    day = flight_date[8:10]
+    dash_one = flight_date[4]
+    dash_two = flight_date[7]
+
+    if (not year.isdigit()) or (not month.isdigit()) or (not day.isdigit()):
+        raise argparse.ArgumentTypeError('Date values must be numeric')
+    if(dash_one != '-') and (dash_two != '-'):
+        raise argparse.ArgumentTypeError('You are missing the dashes')
+    if(int(month) < 1 or int(month) > 12):
+        raise argparse.ArgumentTypeError('Please enter a valid month: 1-12')
+    if(int(day) < 1 or int(day) > 31):
+        #We will add checking for shorter/longer months in future release
+        raise argparse.ArgumentTypeError('Please enter a valid day of the month: 1-31')
+    if(int(year) < 2018):
+        raise argparse.ArgumentTypeError('You cannot search for flights earlier than today')
+
+    return flight_date
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--f', metavar='From', default='EWR', help='Origin airport', type=validAirportCode)
+parser.add_argument('--t', metavar='To', default='CHS', help='Destination airport', type=validAirportCode)
+parser.add_argument('--dep', metavar='Departure Date', default='2018-10-12', help='Departure date e.g. 2018-09-02', type=validFlightDate)
+parser.add_argument('--ret', metavar='Return Date', default='2018-10-14', help='Return date e.g. 2018-09-05', type=validFlightDate)
+args = parser.parse_args()
+
+from_airport = args.f
+to_airport = args.t
+dep_date = args.dep
+ret_date = args.ret
+
+SEARCH_URI='https://skiplagged.com/api/search.php?from={}&to={}&depart={}&return={}&format=v2&_=1519778653193'.format(from_airport, to_airport, dep_date, ret_date)
+
+# Commented out to save time while testing...
+res = requests.get(SEARCH_URI, headers = {'User-Agent':'Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.84 Safari/537.36'})
 flightData = json.loads(res.text)
 
 
 #Below works if we ever want to read json from file instead
 #with open('flightData.json') as json_file:
 #    flightData = json.load(json_file)
-
-
-# BELOW WORKS
-#flightData = json.loads(res.text)
 
 
 # list of airlines found in search results
@@ -76,6 +116,7 @@ roundTripResults = fh.getCheapestRoundTripFlights(filteredOutbound, filteredInbo
 
 fh.displayTrips(roundTripResults)
 
+#Disbable database operations while testing
 fh.addFlights(roundTripResults)
 
 
