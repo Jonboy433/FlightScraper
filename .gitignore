@@ -3,3 +3,5 @@
 
 # DB Config file
 dbconfig.py
+
+.idea/workspace.xml
