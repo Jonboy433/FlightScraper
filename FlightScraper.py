@@ -1,8 +1,6 @@
 import argparse
 import json
 import requests
-import FlightHelper as fh
-
 
 def validAirportCode(iata_code):
     airport = iata_code
@@ -42,6 +40,9 @@ parser.add_argument('--t', metavar='To', default='CHS', help='Destination airpor
 parser.add_argument('--dep', metavar='Departure Date', default='2018-10-12', help='Departure date e.g. 2018-09-02', type=validFlightDate)
 parser.add_argument('--ret', metavar='Return Date', default='2018-10-14', help='Return date e.g. 2018-09-05', type=validFlightDate)
 args = parser.parse_args()
+
+#moving import here for now to prevent db connection on module load failure
+import FlightHelper as fh
 
 from_airport = args.f
 to_airport = args.t
