@@ -155,15 +155,24 @@ def sanitizeInOutbound(flightsInbound, flightsOutbound, flightsToRemove):
     logging.debug('sanitizeInOutBound: Removing flights that have too many connections or are too long')
     for flight in flightsInbound:
         if flight['flight'] not in flightsToRemove.keys():
-            logging.debug('sanitizeInOutbound: flight ' + str(flight['flight']) + ' is being added to the inbound list')
-            filteredInbound.append(flight)
+            if "one_way_price" in flight.keys():
+                logging.debug('sanitizeInOutbound: flight ' + str(flight['flight']) + ' is being added to the inbound list')
+                filteredInbound.append(flight)
+            else:
+                logging.warning('Inbound flight ' + flight[
+                    'flight'] + ' does not have a price. REMOVING from list')
+
     for flight in flightsOutbound:
         if flight['flight'] not in flightsToRemove.keys():
-            logging.debug('sanitizeInOutbound: flight ' + str(flight['flight']) + ' is being added to the outbound list')
-            filteredOutbound.append(flight)
+            if "one_way_price" in flight.keys():
+                logging.debug('sanitizeInOutbound: flight ' + str(flight['flight']) + ' is being added to the outbound list')
+                filteredOutbound.append(flight)
+            else:
+                logging.warning('removeFlightsWithoutPrice: Inbound flight ' + flight[
+                    'flight'] + ' does not have a price. REMOVING from list')
 
-    logging.debug('sanitizeInOutBoud: ' + str(len(filteredInbound)) + ' flights OK for inbound')
-    logging.debug('sanitizeInOutBoud: ' + str(len(filteredOutbound)) + ' flights OK d for outbound')
+    logging.debug('sanitizeInOutBound: ' + str(len(filteredInbound)) + ' flights OK for inbound')
+    logging.debug('sanitizeInOutBound: ' + str(len(filteredOutbound)) + ' flights OK for outbound')
 
     #return a list [filteredInboud, filteredOutbound]
     return filteredInbound, filteredOutbound

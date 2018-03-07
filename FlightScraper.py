@@ -4,13 +4,16 @@ import FlightHelper as fh
 
 # Commented out to save time while testing...
 #res = requests.get('https://skiplagged.com/api/search.php?from=EWR&to=CHS&depart=2018-10-12&return=2018-10-14&format=v2&_=1519778653193',
-#                   headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36'})
-#flightData = json.loads(res.text)
+                   #headers = {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36'})
+
+res = requests.get('https://skiplagged.com/api/search.php?from=EWR&to=CHS&depart=2018-10-12&return=2018-10-14&format=v2',
+                   headers = {'User-Agent':'Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.84 Safari/537.36'})
+flightData = json.loads(res.text)
 
 
 #Below works if we ever want to read json from file instead
-with open('flightData.json') as json_file:
-    flightData = json.load(json_file)
+#with open('flightData.json') as json_file:
+#    flightData = json.load(json_file)
 
 
 # BELOW WORKS
@@ -62,9 +65,8 @@ fh.setAvailableFlightList(flightsMatchQuery)
 flightsDontMatchQuery = sanitizedFlights[1]
 
 
-#Now sanitize the in/outbound by removing all inbound and outbound flights that are too long or have too many connections
+#Now sanitize the in/outbound by removing all inbound and outbound flights that are too long, have too many connections, or no one way price
 filteredInbound, filteredOutbound = fh.sanitizeInOutbound(flightsInbound, flightsOutbound, flightsDontMatchQuery)
-
 
 #At this point sanitizedFlights, filteredInbound, and filteredOutbound have the flight data we want to work with
 
