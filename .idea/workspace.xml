@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99424163-e27c-49a7-adfb-cd5d2ea54a10" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/dbconfig.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/flightDB.py" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/FlightHelper.py" afterPath="$PROJECT_DIR$/FlightHelper.py" />
       <change beforePath="$PROJECT_DIR$/FlightScraper.py" afterPath="$PROJECT_DIR$/FlightScraper.py" />
@@ -21,40 +18,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FlightScraper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FlightScraper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FlightScraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="291">
+              <caret line="67" column="140" lean-forward="false" selection-start-line="67" selection-start-column="140" selection-end-line="67" selection-end-column="140" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlightHelper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FlightHelper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlightHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-446">
-              <caret line="71" column="12" lean-forward="false" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+            <state relative-caret-position="1695">
+              <caret line="150" column="73" lean-forward="false" selection-start-line="150" selection-start-column="73" selection-end-line="150" selection-end-column="73" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <element signature="e#325#662#0" expanded="false" />
-                <element signature="e#855#2037#0" expanded="false" />
-                <element signature="e#3749#3869#0" expanded="false" />
-                <element signature="e#3938#4222#0" expanded="false" />
-                <element signature="e#4420#5401#0" expanded="false" />
-                <element signature="e#5444#5472#0" expanded="false" />
                 <element signature="e#5543#6785#0" expanded="false" />
-                <element signature="e#7882#8710#0" expanded="false" />
-                <element signature="e#8742#8933#0" expanded="false" />
-                <element signature="e#8970#9723#0" expanded="false" />
-                <element signature="e#9858#10174#0" expanded="false" />
-                <element signature="e#10214#11269#0" expanded="false" />
-                <element signature="e#11313#15996#0" expanded="false" />
-                <element signature="e#11507#13626#0" expanded="false" />
-                <element signature="e#13677#15746#0" expanded="false" />
+                <element signature="e#6866#8287#0" expanded="false" />
+                <element signature="e#8336#9164#0" expanded="false" />
+                <element signature="e#9196#9387#0" expanded="false" />
+                <element signature="e#9424#10177#0" expanded="false" />
+                <element signature="e#10221#10267#0" expanded="false" />
+                <element signature="e#10312#10628#0" expanded="false" />
+                <element signature="e#10668#11723#0" expanded="false" />
+                <element signature="e#11767#16450#0" expanded="false" />
+                <element signature="e#16487#16614#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,21 +52,9 @@
       <file leaf-file-name="app.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6212">
-              <caret line="18462" column="79" lean-forward="false" selection-start-line="18462" selection-start-column="79" selection-end-line="18462" selection-end-column="79" />
+            <state relative-caret-position="452">
+              <caret line="20420" column="0" lean-forward="true" selection-start-line="20420" selection-start-column="0" selection-end-line="20420" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="flightDB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flightDB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -85,8 +62,8 @@
       <file leaf-file-name="flightData.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flightData.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38772">
-              <caret line="0" column="257115" lean-forward="false" selection-start-line="0" selection-start-column="257115" selection-end-line="0" selection-end-column="257115" />
+            <state relative-caret-position="270">
+              <caret line="0" column="203890" lean-forward="false" selection-start-line="0" selection-start-column="203890" selection-end-line="0" selection-end-column="203890" />
               <folding />
             </state>
           </provider>
@@ -108,12 +85,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/flightData.json" />
         <option value="$PROJECT_DIR$/FlightData.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/dbconfig.py" />
         <option value="$PROJECT_DIR$/FlightRecord.py" />
         <option value="$PROJECT_DIR$/flightDB.py" />
+        <option value="$PROJECT_DIR$/flightData.json" />
         <option value="$PROJECT_DIR$/FlightHelper.py" />
         <option value="$PROJECT_DIR$/FlightScraper.py" />
       </list>
@@ -233,17 +210,28 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2988889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2988889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2530311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33888888" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33888888" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986821" sideWeight="0.5057851" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2988889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33888888" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986821" sideWeight="0.49421486" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2530311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986821" sideWeight="0.5057851" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,60 +272,17 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FlightScraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlightHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2304">
-          <caret line="250" column="19" lean-forward="false" selection-start-line="250" selection-start-column="19" selection-end-line="250" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#325#662#0" expanded="false" />
-            <element signature="e#855#2037#0" expanded="false" />
-            <element signature="e#3749#3869#0" expanded="false" />
-            <element signature="e#3938#4222#0" expanded="false" />
-            <element signature="e#4420#5401#0" expanded="false" />
-            <element signature="e#5444#5472#0" expanded="false" />
-            <element signature="e#5543#6785#0" expanded="false" />
-            <element signature="e#7882#8710#0" expanded="false" />
-            <element signature="e#8742#8933#0" expanded="false" />
-            <element signature="e#8970#9723#0" expanded="false" />
-            <element signature="e#9858#10174#0" expanded="false" />
-            <element signature="e#10214#11269#0" expanded="false" />
-            <element signature="e#11313#15996#0" expanded="false" />
-            <element signature="e#11507#13626#0" expanded="false" />
-            <element signature="e#13677#15746#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flightData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4662">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flightDB.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -429,7 +374,7 @@
         <state relative-caret-position="306">
           <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="19" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -447,22 +392,16 @@
         <state relative-caret-position="-446">
           <caret line="71" column="12" lean-forward="false" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#325#662#0" expanded="false" />
-            <element signature="e#855#2037#0" expanded="false" />
-            <element signature="e#3749#3869#0" expanded="false" />
-            <element signature="e#3938#4222#0" expanded="false" />
-            <element signature="e#4420#5401#0" expanded="false" />
-            <element signature="e#5444#5472#0" expanded="false" />
             <element signature="e#5543#6785#0" expanded="false" />
-            <element signature="e#7882#8710#0" expanded="false" />
-            <element signature="e#8742#8933#0" expanded="false" />
-            <element signature="e#8970#9723#0" expanded="false" />
-            <element signature="e#9858#10174#0" expanded="false" />
-            <element signature="e#10214#11269#0" expanded="false" />
-            <element signature="e#11313#15996#0" expanded="false" />
-            <element signature="e#11507#13626#0" expanded="false" />
-            <element signature="e#13677#15746#0" expanded="false" />
+            <element signature="e#6866#8287#0" expanded="false" />
+            <element signature="e#8336#9164#0" expanded="false" />
+            <element signature="e#9196#9387#0" expanded="false" />
+            <element signature="e#9424#10177#0" expanded="false" />
+            <element signature="e#10221#10267#0" expanded="false" />
+            <element signature="e#10312#10628#0" expanded="false" />
+            <element signature="e#10668#11723#0" expanded="false" />
+            <element signature="e#11767#16450#0" expanded="false" />
+            <element signature="e#16487#16614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -471,8 +410,304 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/flightData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38772">
+          <caret line="0" column="257115" lean-forward="false" selection-start-line="0" selection-start-column="257115" selection-end-line="0" selection-end-column="257115" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1247971764/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="2793" column="8" lean-forward="false" selection-start-line="2793" selection-start-column="8" selection-end-line="2793" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/datetime.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3227">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6212">
+          <caret line="18462" column="79" lean-forward="false" selection-start-line="18462" selection-start-column="79" selection-end-line="18462" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+          <folding>
+            <element signature="e#5543#6785#0" expanded="false" />
+            <element signature="e#6866#8287#0" expanded="false" />
+            <element signature="e#8336#9164#0" expanded="false" />
+            <element signature="e#9196#9387#0" expanded="false" />
+            <element signature="e#9424#10177#0" expanded="false" />
+            <element signature="e#10221#10267#0" expanded="false" />
+            <element signature="e#10312#10628#0" expanded="false" />
+            <element signature="e#10668#11723#0" expanded="false" />
+            <element signature="e#11767#16450#0" expanded="false" />
+            <element signature="e#16487#16614#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/flightData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1247971764/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="2793" column="8" lean-forward="false" selection-start-line="2793" selection-start-column="8" selection-end-line="2793" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/datetime.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3227">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151638">
+          <caret line="21" column="95" lean-forward="false" selection-start-line="21" selection-start-column="95" selection-end-line="21" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="77" column="44" lean-forward="false" selection-start-line="77" selection-start-column="44" selection-end-line="77" selection-end-column="44" />
+          <folding>
+            <element signature="e#5543#6785#0" expanded="false" />
+            <element signature="e#6866#8287#0" expanded="false" />
+            <element signature="e#8336#9164#0" expanded="false" />
+            <element signature="e#9196#9387#0" expanded="false" />
+            <element signature="e#9424#10177#0" expanded="false" />
+            <element signature="e#10221#10267#0" expanded="false" />
+            <element signature="e#10312#10628#0" expanded="false" />
+            <element signature="e#10668#11723#0" expanded="false" />
+            <element signature="e#11767#16450#0" expanded="false" />
+            <element signature="e#16487#16614#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2304">
+          <caret line="250" column="19" lean-forward="false" selection-start-line="250" selection-start-column="19" selection-end-line="250" selection-end-column="19" />
+          <folding>
+            <element signature="e#5543#6785#0" expanded="false" />
+            <element signature="e#6866#8287#0" expanded="false" />
+            <element signature="e#8336#9164#0" expanded="false" />
+            <element signature="e#9196#9387#0" expanded="false" />
+            <element signature="e#9424#10177#0" expanded="false" />
+            <element signature="e#10221#10267#0" expanded="false" />
+            <element signature="e#10312#10628#0" expanded="false" />
+            <element signature="e#10668#11723#0" expanded="false" />
+            <element signature="e#11767#16450#0" expanded="false" />
+            <element signature="e#16487#16614#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4662">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file:///usr/lib/python3/dist-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.3/system/python_stubs/-1247971764/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="2793" column="8" lean-forward="false" selection-start-line="2793" selection-start-column="8" selection-end-line="2793" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/datetime.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3227">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/mysql/connector/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightRecord.py" />
+    <entry file="file:///usr/lib/python3.5/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3.5/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="1847" column="0" lean-forward="false" selection-start-line="1847" selection-start-column="0" selection-end-line="1847" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#22#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightData.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="0" column="203890" lean-forward="false" selection-start-line="0" selection-start-column="203890" selection-end-line="0" selection-end-column="203890" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightScraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="67" column="140" lean-forward="false" selection-start-line="67" selection-start-column="140" selection-end-line="67" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="20420" column="0" lean-forward="true" selection-start-line="20420" selection-start-column="0" selection-end-line="20420" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlightHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="150" column="73" lean-forward="false" selection-start-line="150" selection-start-column="73" selection-end-line="150" selection-end-column="73" />
+          <folding>
+            <element signature="e#5543#6785#0" expanded="false" />
+            <element signature="e#6866#8287#0" expanded="false" />
+            <element signature="e#8336#9164#0" expanded="false" />
+            <element signature="e#9196#9387#0" expanded="false" />
+            <element signature="e#9424#10177#0" expanded="false" />
+            <element signature="e#10221#10267#0" expanded="false" />
+            <element signature="e#10312#10628#0" expanded="false" />
+            <element signature="e#10668#11723#0" expanded="false" />
+            <element signature="e#11767#16450#0" expanded="false" />
+            <element signature="e#16487#16614#0" expanded="false" />
           </folding>
         </state>
       </provider>
