@@ -34,11 +34,24 @@ def validFlightDate(date):
 
     return flight_date
 
+# Allow caller to prevent results from being stored in DB
+def boolFlag(flag):
+    if flag.lower() in ('yes', 'true', 'y'):
+        return True
+    elif flag.lower() in ('no', 'false', 'n'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('You must enter a boolean value')
+
+#
+disable_db = True
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--f', metavar='From', default='EWR', help='Origin airport', type=validAirportCode)
 parser.add_argument('--t', metavar='To', default='CHS', help='Destination airport', type=validAirportCode)
 parser.add_argument('--dep', metavar='Departure Date', default='2018-10-12', help='Departure date e.g. 2018-09-02', type=validFlightDate)
 parser.add_argument('--ret', metavar='Return Date', default='2018-10-14', help='Return date e.g. 2018-09-05', type=validFlightDate)
+parser.add_argument('--d', metavar='DisableDB', default=False, type=boolFlag)
 args = parser.parse_args()
 
 #moving import here for now to prevent db connection on module load failure
@@ -48,6 +61,7 @@ from_airport = args.f
 to_airport = args.t
 dep_date = args.dep
 ret_date = args.ret
+disable_db = args.d
 
 SEARCH_URI='https://skiplagged.com/api/search.php?from={}&to={}&depart={}&return={}&format=v2&_=1519778653193'.format(from_airport, to_airport, dep_date, ret_date)
 
@@ -117,8 +131,8 @@ roundTripResults = fh.getCheapestRoundTripFlights(filteredOutbound, filteredInbo
 
 fh.displayTrips(roundTripResults)
 
-#Disbable database operations while testing
-fh.addFlights(roundTripResults)
+if (not disable_db):
+    fh.addFlights(roundTripResults)
 
 
 
