@@ -1,4 +1,5 @@
 from datetime import datetime
+from operator import itemgetter
 import math
 import logging
 import flightDB
@@ -22,6 +23,15 @@ def __getCheapestOutboundFlight(outboundList):
 def __getCheapestInboundFlight(inboundList):
     return inboundList[0]
 
+def __sortFlightsByPrice(flights):
+
+    flightList = flights['flights']
+    sortedFlights = sorted(flightList, key=lambda f: f['round_trip_cost'])
+
+    newFlights = {}
+    newFlights['flights'] = sortedFlights
+    return newFlights
+
 def __compileFlightSegments(flightIDs):
     # flightIDs is a list
     # we need to create a new flight dict... outbound key set to any match we find and inbound the same
@@ -33,11 +43,11 @@ def __compileFlightSegments(flightIDs):
         newFlight = {}
         logging.debug('flightSegments: Looking for an outbound flight with id: ' + id['outbound']['id'])
         if (id['outbound']['id']) in currentFlightList.keys():
-            logging.debug('found a flight matching this id... adding to flight list')
+            logging.debug('found an outbound flight matching this id... adding to flight list')
             newFlight['outbound'] = currentFlightList.get(id['outbound']['id'])
             newFlight['outbound']['one_way_price'] = id['outbound']['one_way_price']
         if (id['inbound']['id']) in currentFlightList.keys():
-            logging.debug('found a flight matching this id... adding to flight list')
+            logging.debug('found an inbound flight matching this id... adding to flight list')
             newFlight['inbound'] = currentFlightList.get(id['inbound']['id'])
             newFlight['inbound']['one_way_price'] = id['inbound']['one_way_price']
 
@@ -46,7 +56,8 @@ def __compileFlightSegments(flightIDs):
 
         flights['flights'].append(newFlight)
 
-    return flights
+    sortedFlights = __sortFlightsByPrice(flights)
+    return sortedFlights
 
 def getCheapestRoundTripFlights(outboundList, inboundList, numFlights=5):
     #
@@ -58,33 +69,35 @@ def getCheapestRoundTripFlights(outboundList, inboundList, numFlights=5):
     # numFlights = number of cheapest flights to return. Default is 5 cheapest
     #Using an OrderedDict here to preserve the order of the flights for display purposes
 
-    outboundFlights = outboundList[:numFlights]
-    inboundFlights = inboundList[0]
+    outboundFlights = outboundList[:5]
+    #Use the first 2 outbound flights as the r/t might be cheaper than using only the first
+    inboundFlights = inboundList[:2]
     global currentFlightList
 
     flights = []
 
-    for flight in range(0, numFlights):
-        newFlight = {}
+    for inbound in range(0, 2):
+        for flight in range(0, numFlights):
+            newFlight = {}
 
-        logging.debug('Trying to add this flight: ' + outboundFlights[flight]['flight'])
-        newFlight['outbound'] = {
-            'id' : outboundFlights[flight]['flight'],
-            'one_way_price' : outboundFlights[flight]['one_way_price']
-        }
+            logging.debug('Trying to add this flight: ' + outboundFlights[flight]['flight'])
+            newFlight['outbound'] = {
+                'id' : outboundFlights[flight]['flight'],
+                'one_way_price' : outboundFlights[flight]['one_way_price']
+            }
 
-        newFlight['inbound'] = {
-            'id' : inboundFlights['flight'],
-            'one_way_price' : inboundFlights['one_way_price']
-        }
+            newFlight['inbound'] = {
+                'id' : inboundFlights[inbound]['flight'],
+                'one_way_price' : inboundFlights[inbound]['one_way_price']
+            }
 
-        logging.debug('getCheapest: adding ' + str(newFlight) + ' to final list')
-        flights.append(newFlight)
+            logging.debug('getCheapest: adding ' + str(newFlight) + ' to final list')
+            flights.append(newFlight)
 
     # At this stage flights is a list of dicts that only has inbound and outbound flight IDs
     # We need to write a method that will accept this list as an input and then return the full flights
 
-    return __compileFlightSegments(flights)
+    return __compileFlightSegments(flights[:numFlights])
 
 def getCheapestReturnFlightID(inbound_flights):
     #Skiplagged data is already sorte by cheapest first so we can grab the first one

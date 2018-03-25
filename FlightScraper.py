@@ -66,7 +66,7 @@ dep_date = args.dep
 ret_date = args.ret
 disable_db = args.d
 
-SEARCH_URI='https://skiplagged.com/api/search.php?from={}&to={}&depart={}&return={}&format=v2&_=1519778653193'.format(from_airport, to_airport, dep_date, ret_date)
+SEARCH_URI='https://skiplagged.com/api/search.php?from={}&to={}&depart={}&return={}&format=v2'.format(from_airport, to_airport, dep_date, ret_date)
 
 # Commented out to save time while testing...
 res = requests.get(SEARCH_URI, headers = {'User-Agent':'Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.84 Safari/537.36'})
@@ -133,7 +133,6 @@ filteredInbound, filteredOutbound = fh.sanitizeInOutbound(flightsInbound, flight
 roundTripResults = fh.getCheapestRoundTripFlights(filteredOutbound, filteredInbound)
 
 fh.displayTrips(roundTripResults)
-
 
 ##################
 if (show_unfiltered_results):
