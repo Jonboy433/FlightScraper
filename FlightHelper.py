@@ -66,6 +66,7 @@ def getCheapestRoundTripFlights(outboundList, inboundList, numFlights=5):
 
     for flight in range(0, numFlights):
         newFlight = {}
+
         logging.debug('Trying to add this flight: ' + outboundFlights[flight]['flight'])
         newFlight['outbound'] = {
             'id' : outboundFlights[flight]['flight'],

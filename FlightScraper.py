@@ -43,8 +43,11 @@ def boolFlag(flag):
     else:
         raise argparse.ArgumentTypeError('You must enter a boolean value')
 
-#
+#Set default value to true
 disable_db = True
+
+#Set default value to false
+show_unfiltered_results = False
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--f', metavar='From', default='EWR', help='Origin airport', type=validAirportCode)
@@ -130,6 +133,13 @@ filteredInbound, filteredOutbound = fh.sanitizeInOutbound(flightsInbound, flight
 roundTripResults = fh.getCheapestRoundTripFlights(filteredOutbound, filteredInbound)
 
 fh.displayTrips(roundTripResults)
+
+
+##################
+if (show_unfiltered_results):
+    fh.setAvailableFlightList(flights)
+    roundTripResults = fh.getCheapestRoundTripFlights(flightsOutbound, flightsInbound)
+    fh.displayTrips(roundTripResults)
 
 if (not disable_db):
     fh.addFlights(roundTripResults)
