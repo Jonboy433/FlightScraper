@@ -1,6 +1,7 @@
 import argparse
 import json
 import requests
+from tkinter import *
 
 def validAirportCode(iata_code):
     airport = iata_code
@@ -139,6 +140,25 @@ if (show_unfiltered_results):
     fh.setAvailableFlightList(flights)
     roundTripResults = fh.getCheapestRoundTripFlights(flightsOutbound, flightsInbound)
     fh.displayTrips(roundTripResults)
+
+
+alertPrice = 44000
+
+def setAlertPrice(price):
+    global alertPrice
+    alertPrice = price
+def getAlertPrice():
+    global alertPrice
+    return alertPrice
+
+alertFlights = fh.getFlightsByAlertPrice(roundTripResults, alertPrice)
+
+root = Tk()
+root.title('Flight Results')
+T = Text(root)
+T.pack()
+T.insert(END,fh.getTrips(alertFlights))
+mainloop()
 
 if (not disable_db):
     fh.addFlights(roundTripResults)

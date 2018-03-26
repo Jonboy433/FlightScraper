@@ -1,5 +1,4 @@
 from datetime import datetime
-from operator import itemgetter
 import math
 import logging
 import flightDB
@@ -215,6 +214,27 @@ def getTripSummary(trip):
     print('From: ' + trip['from']['airports'][0])
     print('To: ' + trip['to']['airports'][0])
 
+def getTrips(roundtrips):
+#Input: dict of lists
+#Output: string that can be displayed anywhere
+
+    flightDetails = ''
+    flightIndex = 1
+    for trip in roundtrips['flights']:
+        flightDetails += ('Flight #' + str(flightIndex) + '---------\n')
+        flightDetails += ('OUTBOUND\n')
+        for segment in range(0, trip['outbound']['count']):
+            leg = trip['outbound']['segments'][segment]
+            flightDetails += (displaySegmentInfo(leg) + '\n')
+        flightDetails += ('INBOUND\n')
+        for segment in range(0, trip['inbound']['count']):
+            leg = trip['inbound']['segments'][segment]
+            flightDetails += (displaySegmentInfo(leg) + '\n')
+        flightDetails += ('Total roundtrip cost: $ ' + formatFlightCost(trip['round_trip_cost']))
+        flightIndex += 1
+    return flightDetails
+
+
 def displayTrips(roundtrips):
 
     flightIndex = 1
@@ -223,13 +243,12 @@ def displayTrips(roundtrips):
         print('Flight #' + str(flightIndex) + '---------')
         print('OUTBOUND')
         for segment in range(0, trip['outbound']['count']):
-            #print(str(trip['outbound']['segments'][segment]['airline']) + ' ' + str(trip['outbound']['segments'][segment]['flight_number']))
             leg = trip['outbound']['segments'][segment]
-            displaySegmentInfo(leg)
+            print(displaySegmentInfo(leg))
         print('INBOUND')
         for segment in range(0, trip['inbound']['count']):
             leg = trip['inbound']['segments'][segment]
-            displaySegmentInfo(leg)
+            print(displaySegmentInfo(leg))
         print('Total roundtrip cost: $ ' + formatFlightCost(trip['round_trip_cost']))
         flightIndex += 1
     return None
@@ -270,7 +289,7 @@ def displaySegmentInfo(segment):
     outboundDuration = formatDuration(outboundDuration)
 
     # UA 1234 - EWR -> CHS - 8:00 -> 12:00 (Duration: 4)
-    print ('[{} {}] {} -> {} - {} -> {} (Duration: {})'.format(airline, flight_number, outboundAirport, inboundAirpot,
+    return ('[{} {}] {} -> {} - {} -> {} (Duration: {})'.format(airline, flight_number, outboundAirport, inboundAirpot,
                                                               outTime, inTime, outboundDuration))
 
 def prepareFlightRecords(flightList):
@@ -357,3 +376,16 @@ def addFlights(allRoundtrips):
     flightDB.closeConnection()
     return None
 
+def getFlightsByAlertPrice(flightList, price):
+    #Return a list of flights equal to or less than the input price
+    #Input is a dict of flights
+    flights = flightList['flights']
+    filteredFlights = []
+
+    for flight in flights:
+        if (flight['round_trip_cost'] <= price):
+            filteredFlights.append(flight)
+
+    results = {}
+    results['flights'] = filteredFlights
+    return results
