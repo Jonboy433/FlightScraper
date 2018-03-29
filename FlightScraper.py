@@ -44,8 +44,8 @@ def boolFlag(flag):
     else:
         raise argparse.ArgumentTypeError('You must enter a boolean value')
 
-#Set default value to true
-disable_db = True
+#Set default value to false
+disable_db = False
 
 #Set default value to false
 show_unfiltered_results = False
