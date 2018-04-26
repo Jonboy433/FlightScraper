@@ -142,6 +142,9 @@ if (show_unfiltered_results):
     fh.displayTrips(roundTripResults)
 
 
+if (not disable_db):
+    fh.addFlights(roundTripResults)
+
 alertPrice = 44000
 
 def setAlertPrice(price):
@@ -160,8 +163,7 @@ T.pack()
 T.insert(END,fh.getTrips(alertFlights))
 mainloop()
 
-if (not disable_db):
-    fh.addFlights(roundTripResults)
+
 
 
 
